@@ -16,9 +16,6 @@ uri, header, body = client.sign(url, http_method='POST')
 
 import openpyxl
 import os
-import xlsxwriter
-import xlrd
-#import getpass
 os.getcwd()
 os.chdir('E:/')
 wb = openpyxl.load_workbook('GetALlPromotions.xlsx')
@@ -38,25 +35,3 @@ for i in range (0,3):
         j = i + 1
         sheet['B'+str(i)].value = response.text
 wb.save('GetALlPromotions.xlsx')
-#print(sheet['A1'].value)
-
-
-"""payload= {
-      "locationcode": "",
-  "deliverymode": "",
-  "channeltype": "",
-  "promotiontype": "cart",
-  "hasvouchers": "",
-  "fromdate": "2018-03-18",
-  "fromtime": "13:00:00",
-  "todate": "2018-03-31",
-  "totime": "15:00:00",
-  "activestatus": "true"
-}"""
-#data = json.dumps(payload)
-
-
-
-
-#sheet['B2'].value = response.text
-#wb.save('GetALlPromotions.xlsx')
